@@ -19,7 +19,7 @@ from WarThunder.maps import maps
 
 
 LOCAL_PATH   = os.path.dirname(os.path.realpath(__file__))
-MAP_PATH     = os.path.join(LOCAL_PATH, 'map.jpg')
+MAP_PATH     = os.path.join(LOCAL_PATH, 'map.img')
 IP_ADDRESS   = socket.gethostbyname(socket.gethostname())
 URL_MAP_IMG  = 'http://{}:8111/map.img'.format(IP_ADDRESS)
 URL_MAP_OBJ  = 'http://{}:8111/map_obj.json'.format(IP_ADDRESS)
@@ -513,7 +513,7 @@ class MapInfo(object):
             self.map_valid = True
                 
         except URLError:
-            print('ERROR: could not download map.jpg')
+            print('ERROR: could not download map.img')
     
         except (OSError, JSONDecodeError, simpleJSONDecodeError):
             print('Waiting to join a match')
